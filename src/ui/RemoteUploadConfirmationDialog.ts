@@ -20,14 +20,6 @@ export default class RemoteUploadConfirmationDialog extends Modal {
     const buttonsDiv = this.modalEl.createDiv('modal-button-container')
 
     new ButtonComponent(buttonsDiv)
-      .setButtonText('Always upload')
-      .setCta()
-      .onClick(() => {
-        this.deferredResolve({ shouldUpload: true, alwaysUpload: true })
-        this.afterUserInput()
-      })
-
-    new ButtonComponent(buttonsDiv)
       .setButtonText('Upload')
       .setCta()
       .onClick(() => {
@@ -53,5 +45,4 @@ export default class RemoteUploadConfirmationDialog extends Modal {
 
 export type UploadConfirmationResponse = {
   shouldUpload: boolean | undefined
-  alwaysUpload?: boolean
 }

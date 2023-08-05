@@ -75,10 +75,6 @@ export default class ImgurPlugin extends Plugin {
         case undefined:
           return
         case true:
-          if (userResp.alwaysUpload) {
-            this.settings.showRemoteUploadConfirmation = false
-            void this.saveSettings()
-          }
           break
         case false:
           markdownView.currentMode.clipboardManager.handlePaste(new PasteEventCopy(e))
@@ -123,10 +119,6 @@ export default class ImgurPlugin extends Plugin {
         case undefined:
           return
         case true:
-          if (userResp.alwaysUpload) {
-            this.settings.showRemoteUploadConfirmation = false
-            void this.saveSettings()
-          }
           break
         case false: {
           markdownView.currentMode.clipboardManager.handleDrop(DragEventCopy.create(e, files))
